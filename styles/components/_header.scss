@@ -1,0 +1,37 @@
+@use '../util/mixins' as m;
+
+.header {
+    position: relative;
+    width: 100%;
+    @include m.flex(column, flex-start, center);
+
+
+     &__img {
+        margin: 3em auto;
+        width: 26em;
+        @include m.float(floating);
+        @include m.animate(floating, 8s, ease-in-out, infinite);
+        @include m.breakpoint(320px){
+         width: 19em;
+        }
+     }
+
+     &__logo {
+        width: 70%;
+        margin-top: 1em;
+        @include m.breakpoint(320px){
+         width: 60%;
+        }
+     }
+
+     .romb {
+        position: absolute;
+        z-index: -1;
+        height: 100%; 
+        width: 100%;
+        border-left: 40vw solid transparent;
+        border-right: 40vw solid transparent;
+        border-bottom: 55.8vw solid var(--color-pop);  
+        filter: drop-shadow(0 5px 16px #de1010);
+      }
+}

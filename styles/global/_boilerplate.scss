@@ -1,0 +1,25 @@
+@use '../util/mixins' as m;
+@use './fonts' as f;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    width: 100%;
+    @include m.flex(column, flex-start, center);
+    background-color: var(--color-background);
+    font-family: f.$main-font;
+    overflow-x: hidden;
+}
